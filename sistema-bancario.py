@@ -13,6 +13,9 @@ class Conta:
         return "Insira um valor valido!"
 
     def saque(self):
+        if self.limite_de_saque <= 0: return "Lamento, você estourou o limite de saques de hoje."
+        if self.saldo == 0: return "Você não possui saldo."
+        
         valor = float(input("Digite o valor do saque: R$"))
         if self.saldo > 0 and self.saldo >= valor:
             if valor > 0 and valor <=500 and self.limite_de_saque > 0:
@@ -32,6 +35,7 @@ class Conta:
 
 def main():
     conta = Conta()
+    switch = 0
 
     while (True):
         print("_______________________________________")
@@ -43,7 +47,13 @@ def main():
         print("0: Encerrar")
         print(f"==== LIMITE DE SAQUES: {conta.limite_de_saque} ====")
         print("_______________________________________")
-        switch = int(input("Selecione uma opção: "))
+        
+        try:
+            switch = int(input("Selecione uma opção: "))
+        except ValueError:
+            print("Entrada inválida. Por favor, insira um número.")
+            continue
+        
         if switch == 1: conta.deposito()
         if switch == 2: conta.saque()
         if switch == 3: conta.mostrar_extrato()
