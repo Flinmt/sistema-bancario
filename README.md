@@ -1,1 +1,5 @@
-# sistema-bancario
+# Sistema Bancário - Projeto Prático
+Este repositório contém a implementação detalhada de um sistema bancário desenvolvido como parte integrante do bootcamp NTT DATA. O projeto foi cuidadosamente elaborado para demonstrar a aplicação prática dos conceitos fundamentais abordados durante o programa, incluindo princípios de programação orientada a objetos, manipulação de dados e boas práticas de desenvolvimento. A implementação serve como um exemplo concreto de como os conhecimentos teóricos podem ser traduzidos em soluções funcionais do mundo real.
+
+# Banking System - Practical Project
+This repository contains the detailed implementation of a banking system developed as an integral part of the NTT DATA bootcamp. The project was carefully designed to demonstrate the practical application of fundamental concepts covered during the program, including object-oriented programming principles, data manipulation, and development best practices. The implementation serves as a concrete example of how theoretical knowledge can be translated into real-world functional solutions.
