@@ -13,17 +13,27 @@ class Conta:
         return "Insira um valor valido!"
 
     def saque(self):
-        if self.limite_de_saque <= 0: return "Lamento, você estourou o limite de saques de hoje."
-        if self.saldo == 0: return "Você não possui saldo."
+        print("_______________________________________")
+        if self.limite_de_saque <= 0: 
+            print("Lamento, você estourou o limite de saques de hoje.") 
+            return
+        if self.saldo == 0: 
+            print("Você não possui saldo suficiente")
+            return
         
         valor = float(input("Digite o valor do saque: R$"))
-        if self.saldo > 0 and self.saldo >= valor:
-            if valor > 0 and valor <=500 and self.limite_de_saque > 0:
-                self.saldo -= valor
-                self.extrato.append(f"Saque --- R${valor:.2f}")
-                self.limite_de_saque -= 1
-                return "Saque realizado com sucesso!"
-        return "Saldo insuficiente, cancelando operação."
+        if valor <= 0 or valor > 500: 
+            print("O valor do saque deve ser maior que R$0,00 e menor que R$500,00")
+            return
+        if valor > self.saldo: 
+            print("Saldo insuficiente, cancelando operação.")
+            return
+
+        self.saldo -= valor
+        self.extrato.append(f"Saque --- R${valor:.2f}")
+        self.limite_de_saque -= 1
+        print("Saque realizado com sucesso!")
+
 
     def mostrar_extrato(self):    
         print("_______________________________________")
