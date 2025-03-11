@@ -1,3 +1,5 @@
+from model.conta import Conta
+
 class Usuario:
     def __init__(self, nome, dataNascimento, cpf, logadouro, bairro, cidade, estado):
         self.nome = nome
@@ -9,3 +11,4 @@ class Usuario:
             "cidade": cidade,
             "estado": estado
         }
+        self.conta = Conta()
